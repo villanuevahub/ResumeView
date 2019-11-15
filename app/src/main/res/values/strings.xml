@@ -1,0 +1,30 @@
+<resources>
+
+    <string name="app_name">My Application16</string>
+    //Main
+    <string name="hint_etmainuser">user: user@example.com</string>
+    <string name="hint_etmainpsswd">password</string>
+    <string name="label_tvmainnwusr">Create User</string>
+    <string name="label_tvmainsignin">Sign in</string>
+
+    //CreateUser
+    <string name="hint_tvnwusrname">First Name ejem: @ntony</string>
+    <string name="hint_tvnwusrnames">Second Name ejem: @aron</string>
+    <string name="hint_tvnwusrlstnm">First Last Name ejem: @nderson</string>
+    <string name="hint_tvnwusrlstnms">Second Last Name ejem: @anwser</string>
+    <string name="hint_tvnwusrgnrmle">Male </string>
+    <string name="hint_tvnwusrgnrfle">Female </string>
+    <string name="hint_tvnwusralias">Alias</string>
+    <string name="hint_tvnwusrusrnm">Username ejem : M@ster</string>
+    <string name="hint_tvnwusrpsswd">password</string>
+    <string name="hint_tvnwusrcfmpsswd">Confirm your password</string>
+    <string name="hint_tvnwusremail">email ejem: @example.com</string>
+    <string name="hitn_tvnwusrcfmemail">Confirm your email</string>
+    <string name="hint_tvnwusrmobpho">Mobile Phone ejem: 444 10 Digits</string>
+    <string name="hint_tvnwuscfmrmobpho">Confirm Mobile Phone</string>
+    <string name="hint_tvnwusrstreet">Street</string>
+    <string name="hint_tvnwusrhomenumber">Homes Number</string>
+    <string name="hint_tvnwusrpostalnum">Postal Numbre Zip</string>
+    <string name="label_bTtnnwusr">Create User</string>
+
+</resources>
