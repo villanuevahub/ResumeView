@@ -18,122 +18,123 @@
             android:orientation="vertical" >
 
             <EditText
-                android:id="@+id/editText5"
+                android:id="@+id/eTnwusrname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrname"
+                android:hint="@string/hint_etnwusrname"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText7"
+                android:id="@+id/eTnwusrnames"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrnames"
+                android:hint="@string/hint_etnwusrnames"
                 android:inputType="textPersonName" />
 
 
             <EditText
-                android:id="@+id/editText4"
+                android:id="@+id/eTnwusrlstnm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrlstnm"
+                android:hint="@string/hint_etnwusrlstnm"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText8"
+                android:id="@+id/eTnwusrlstnms"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrlstnms"
+                android:hint="@string/hint_etnwusrlstnms"
                 android:inputType="textPersonName" />
 
             <RadioGroup
+                android:id="@+id/rgnwusrgnrs"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:gravity="center_horizontal">
 
                 <RadioButton
-                    android:id="@+id/radioButton2"
+                    android:id="@+id/rBttnnwusrmle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:text="@string/hint_tvnwusrgnrmle" />
+                    android:text="@string/hint_rbttnnwusrgnrmle" />
 
                 <RadioButton
-                    android:id="@+id/radioButton3"
+                    android:id="@+id/rBttnnwusrfmle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:text="@string/hint_tvnwusrgnrfle" />
+                    android:text="@string/hint_rbttnnwusrgnrfle" />
 
             </RadioGroup>
 
             <EditText
-                android:id="@+id/editText9"
+                android:id="@+id/eTnwusralias"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusralias"
+                android:hint="@string/hint_etnwusralias"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText10"
+                android:id="@+id/eTnwusrusrnm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrusrnm"
+                android:hint="@string/hint_etnwusrusrnm"
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/editText11"
+                android:id="@+id/eTnwusrpssd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrpsswd"
+                android:hint="@string/hint_etnwusrpsswd"
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/editText12"
+                android:id="@+id/eTnwusrcfmpssd"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrcfmpsswd"
+                android:hint="@string/hint_etnwusrcfmpsswd"
                 android:inputType="textPassword" />
 
             <EditText
-                android:id="@+id/editText6"
+                android:id="@+id/eTnwusremail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusremail"
+                android:hint="@string/hint_etnwusremail"
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/editText16"
+                android:id="@+id/eTnwusrcfmemail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hitn_tvnwusrcfmemail"
+                android:hint="@string/hitn_etnwusrcfmemail"
                 android:inputType="textEmailAddress" />
 
             <EditText
-                android:id="@+id/editText14"
+                android:id="@+id/eTnwusrmobpho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwusrmobpho"
+                android:hint="@string/hint_etnwusrmobpho"
                 android:inputType="phone" />
 
             <EditText
-                android:id="@+id/editText13"
+                android:id="@+id/eTnwusrcfmmobpho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="16"
-                android:hint="@string/hint_tvnwuscfmrmobpho"
+                android:hint="@string/hint_etnwuscfmrmobpho"
                 android:inputType="phone" />
 
             <Button
@@ -142,7 +143,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:ems="16"
-                android:text="@string/label_bTtnnwusr" />
+                android:text="@string/label_bttnnwusr" />
 
         </LinearLayout>
 

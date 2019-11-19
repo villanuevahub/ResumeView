@@ -6,15 +6,15 @@ public class Users {
 
     public static final String COLUMN_ID = "Id";
     public static final String COLUMN_IDE = "Identificator";
-    public static final String COLUMN_FIRST_NAME = "First Name";
-    public static final String COLUMN_SECOND_NAME = "Second Name";
-    public static final String COLUMN_LAST_NAME = "Last Name";
-    public static final String COLUMN_SECOND_LAST_NAME = "Second Last Name";
+    public static final String COLUMN_FIRST_NAME = "First_Name";
+    public static final String COLUMN_SECOND_NAME = "Second_Name";
+    public static final String COLUMN_LAST_NAME = "Last_Name";
+    public static final String COLUMN_SECOND_LAST_NAME = "Second_Last_Name";
     public static final String COLUMN_ALIAS = "Alias";
     public static final String COLUMN_USERNAME = "Username";
     public static final String COLUMN_PASSWORD = "Password";
     public static final String COLUMN_EMAIL = "Email";
-    public static final String COLUMN_MOBILE_PHONE = "Mobile Phone";
+    public static final String COLUMN_MOBILE_PHONE = "Mobile_Phone";
     public static final String COLUMN_GENRE = "Genre";
     public static final String COLUMN_AGE = "Age";
     public static final String COLUMN_STREET = "Street";
@@ -23,7 +23,7 @@ public class Users {
     public static final String COLUMN_COUNTRY = "Country";
     public static final String COLUMN_SCHOOL = "School";
     public static final String COLUMN_BIRTHDATE = "Birthdate";
-    public static final String COLUMN_CIVIL_STATUS = "Civil Status";
+    public static final String COLUMN_CIVIL_STATUS = "Civil_Status";
     public static final String COLUMN_JOB = "Job";
     public static final String COLUMN_CURRENT_TIMESTAMP = "Timestamp";
 
@@ -50,29 +50,29 @@ public class Users {
     private String Job;
     private String Timestamp;
 
-    public static final String CREATE_TABLE = "CREATE TABLE " + "( "
-            + COLUMN_ID + "INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + COLUMN_IDE + "INTEGER AUTOINCREMENT, "
-            + COLUMN_FIRST_NAME + "TEXT, "
-            + COLUMN_SECOND_NAME + "TEXT, "
-            + COLUMN_LAST_NAME + "TEXT, "
-            + COLUMN_SECOND_LAST_NAME + "TEXT, "
-            + COLUMN_ALIAS + "TEXT, "
-            + COLUMN_USERNAME + "TEXT, "
-            + COLUMN_PASSWORD + "TEXT, "
-            + COLUMN_EMAIL + "TEXT, "
-            + COLUMN_MOBILE_PHONE + "TEXT, "
-            + COLUMN_GENRE + "TEXT, "
-            + COLUMN_AGE + "TEXT, "
-            + COLUMN_STREET + "TEXT, "
-            + COLUMN_NUMBER + "TEXT, "
-            + COLUMN_NEIGHBOURHOOD + "TEXT, "
-            + COLUMN_COUNTRY + "TEXT, "
-            + COLUMN_SCHOOL + "TEXT, "
-            + COLUMN_BIRTHDATE + "TEXT, "
-            + COLUMN_CIVIL_STATUS + "TEXT, "
-            + COLUMN_JOB + "TEXT, "
-            + COLUMN_CURRENT_TIMESTAMP + "TEXT"
+    public static final String CREATE_TABLE = "CREATE TABLE " + TABLE_NAME +" ("
+            + COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"
+            + COLUMN_IDE + " INTEGER,"
+            + COLUMN_FIRST_NAME + " TEXT,"
+            + COLUMN_SECOND_NAME + " TEXT,"
+            + COLUMN_LAST_NAME + " TEXT,"
+            + COLUMN_SECOND_LAST_NAME + " TEXT,"
+            + COLUMN_ALIAS + " TEXT,"
+            + COLUMN_USERNAME + " TEXT,"
+            + COLUMN_PASSWORD + " TEXT,"
+            + COLUMN_EMAIL + " TEXT,"
+            + COLUMN_MOBILE_PHONE + " TEXT,"
+            + COLUMN_GENRE + " TEXT,"
+            + COLUMN_AGE + " TEXT,"
+            + COLUMN_STREET + " TEXT,"
+            + COLUMN_NUMBER + " TEXT,"
+            + COLUMN_NEIGHBOURHOOD + " TEXT,"
+            + COLUMN_COUNTRY + " TEXT,"
+            + COLUMN_SCHOOL + " TEXT,"
+            + COLUMN_BIRTHDATE + " TEXT,"
+            + COLUMN_CIVIL_STATUS + " TEXT,"
+            + COLUMN_JOB + " TEXT,"
+            + COLUMN_CURRENT_TIMESTAMP + " DATETIME DEFAULT CURRENT_TIMESTAMP"
             + ")";
 
     public Users(){
@@ -151,11 +151,11 @@ public class Users {
     }
 
     public String getSecond_Last_Name() {
-        return Last_Name;
+        return Second_Last_Name;
     }
 
-    public void setSecond_Last_Name(String Last_Name) {
-        this.Last_Name = Last_Name;
+    public void setSecond_Last_Name(String Second_Last_Name) {
+        this.Second_Last_Name = Second_Last_Name;
     }
 
     public String getAlias() {
@@ -285,5 +285,4 @@ public class Users {
     public void setTimestamp(String Timestamp) {
         this.Timestamp = Timestamp;
     }
-
 }

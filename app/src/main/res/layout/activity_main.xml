@@ -31,7 +31,7 @@
 
         <Button
             android:id="@+id/bTtnmainsignin"
-            android:text="@string/label_tvmainsignin"
+            android:text="@string/label_bttnmainsignin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -43,7 +43,7 @@
 
         <Button
             android:id="@+id/bTtnmainnwusr"
-            android:text="@string/label_tvmainnwusr"
+            android:text="@string/label_bttnmainnwusr"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

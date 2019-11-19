@@ -14,8 +14,6 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
     private static final String DATABASE_NAME = "DB";
 
-
-
     public DataBaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
@@ -32,7 +30,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public long insertUser(String First_Name, String Second_Name, String Last_Name,
+    public long insertUser(int Ide, String First_Name, String Second_Name, String Last_Name,
                            String Second_Last_Name, String Alias, String Username, String Password,
                            String Email, String Mobile_Phone, String Genre, String Age, String Street,
                            String Number, String Neighbourhood, String Country, String School,
@@ -41,6 +39,7 @@ public class DataBaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(Users.COLUMN_IDE, Ide);
         values.put(Users.COLUMN_FIRST_NAME, First_Name);
         values.put(Users.COLUMN_SECOND_NAME, Second_Name);
         values.put(Users.COLUMN_LAST_NAME, Last_Name);
@@ -69,7 +68,9 @@ public class DataBaseHelper extends SQLiteOpenHelper {
     }
 
     public Users getUser(long Id) {
+
         SQLiteDatabase db = getReadableDatabase();
+
         Cursor cursor = db.query(Users.TABLE_NAME, new String[]{Users.COLUMN_ID, Users.COLUMN_IDE,
                 Users.COLUMN_FIRST_NAME, Users.COLUMN_SECOND_NAME, Users.COLUMN_LAST_NAME,
                 Users.COLUMN_SECOND_LAST_NAME, Users.COLUMN_ALIAS, Users.COLUMN_USERNAME,
@@ -112,17 +113,19 @@ public class DataBaseHelper extends SQLiteOpenHelper {
        }
 
     public List<Users> getAllUsers() {
-        List<Users> allUsers = new ArrayList<>();
-        String SelectAllUsers = "SELECT * FROM " + Users.TABLE_NAME + " ORDER BY "
-                + Users.COLUMN_CURRENT_TIMESTAMP + " DESC";
 
-        SQLiteDatabase db = getReadableDatabase();
+        List<Users> allUsers = new ArrayList<>();
+        String SelectAllUsers = "SELECT * FROM " + Users.TABLE_NAME + " ORDER BY " +
+                Users.COLUMN_CURRENT_TIMESTAMP + " DESC";
+
+        SQLiteDatabase db = getWritableDatabase();
         Cursor cursor = db.rawQuery(SelectAllUsers, null);
 
         if(cursor.moveToFirst()) {
             do {
 
                 Users user = new Users();
+
                 user.setId(cursor.getInt(cursor.getColumnIndex(Users.COLUMN_ID)));
                 user.setIde(cursor.getInt(cursor.getColumnIndex(Users.COLUMN_IDE)));
                 user.setFirst_Name(cursor.getString(cursor.getColumnIndex(Users.COLUMN_FIRST_NAME)));
@@ -146,25 +149,72 @@ public class DataBaseHelper extends SQLiteOpenHelper {
                 user.setJob(cursor.getString(cursor.getColumnIndex(Users.COLUMN_JOB)));
                 user.setTimestamp(cursor.getString(cursor.getColumnIndex(Users.COLUMN_CURRENT_TIMESTAMP)));
 
+                allUsers.add(user);
+
             }while (cursor.moveToNext());
         }
         db.close();
         return allUsers;
     }
     public int getUsersCount() {
-        String CountQuery = "SELECT * FROM "+ Users.TABLE_NAME;
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery(CountQuery, null);
 
-        int count = cursor.getCount();
+        String CountQuery = "SELECT * FROM "+ Users.TABLE_NAME;
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(CountQuery, null);
+        int count = 0;
+        if (cursor.moveToFirst())
+            do {
+                count+=1;
+            }while (cursor.moveToNext());
+
+        //int count = cursor.getCount();
         cursor.close();
         return count;
     }
 
+    public Users getUserById(int Id){
+
+        Users user = new Users();
+        String getUserById = "SELECT * FROM " + Users.TABLE_NAME +" WHERE " + Users.COLUMN_ID + " = "+ Id;
+        SQLiteDatabase db = getWritableDatabase();
+        Cursor cursor = db.rawQuery(getUserById, null);
+
+        if(cursor.moveToFirst()) {
+            do{
+                user.setId(cursor.getInt(cursor.getColumnIndex(Users.COLUMN_ID)));
+                user.setIde(cursor.getInt(cursor.getColumnIndex(Users.COLUMN_IDE)));
+                user.setFirst_Name(cursor.getString(cursor.getColumnIndex(Users.COLUMN_FIRST_NAME)));
+                user.setSecond_Name(cursor.getString(cursor.getColumnIndex(Users.COLUMN_SECOND_NAME)));
+                user.setLast_Name(cursor.getString(cursor.getColumnIndex(Users.COLUMN_LAST_NAME)));
+                user.setSecond_Name(cursor.getString(cursor.getColumnIndex(Users.COLUMN_SECOND_LAST_NAME)));
+                user.setAlias(cursor.getString(cursor.getColumnIndex(Users.COLUMN_ALIAS)));
+                user.setUsername(cursor.getString(cursor.getColumnIndex(Users.COLUMN_USERNAME)));
+                user.setPassword(cursor.getString(cursor.getColumnIndex(Users.COLUMN_PASSWORD)));
+                user.setEmail(cursor.getString(cursor.getColumnIndex(Users.COLUMN_EMAIL)));
+                user.setMobile_Phone(cursor.getString(cursor.getColumnIndex(Users.COLUMN_MOBILE_PHONE)));
+                user.setGenre(cursor.getString(cursor.getColumnIndex(Users.COLUMN_GENRE)));
+                user.setAge(cursor.getString(cursor.getColumnIndex(Users.COLUMN_AGE)));
+                user.setStreet(cursor.getString(cursor.getColumnIndex(Users.COLUMN_STREET)));
+                user.setNumber(cursor.getString(cursor.getColumnIndex(Users.COLUMN_NUMBER)));
+                user.setNeighbourhood(cursor.getString(cursor.getColumnIndex(Users.COLUMN_NEIGHBOURHOOD)));
+                user.setCountry(cursor.getString(cursor.getColumnIndex(Users.COLUMN_COUNTRY)));
+                user.setSchool(cursor.getString(cursor.getColumnIndex(Users.COLUMN_SCHOOL)));
+                user.setBirthdate(cursor.getString(cursor.getColumnIndex(Users.COLUMN_BIRTHDATE)));
+                user.setCivil_Status(cursor.getString(cursor.getColumnIndex(Users.COLUMN_CIVIL_STATUS)));
+                user.setJob(cursor.getString(cursor.getColumnIndex(Users.COLUMN_JOB)));
+                user.setTimestamp(cursor.getString(cursor.getColumnIndex(Users.COLUMN_CURRENT_TIMESTAMP)));
+            }while (cursor.moveToNext());
+        }
+        db.close();
+        return user;
+    }
+
     public int updateUser(Users user) {
+
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
 
+        values.put(Users.COLUMN_FIRST_NAME, user.getIde());
         values.put(Users.COLUMN_FIRST_NAME, user.getFirst_Name());
         values.put(Users.COLUMN_SECOND_NAME, user.getSecond_Name());
         values.put(Users.COLUMN_LAST_NAME, user.getLast_Name());
